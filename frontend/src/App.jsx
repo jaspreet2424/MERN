@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Home title = {"Flipcart"} ></Home>
-      <About title = {"Amazon"}></About>
+      {/* <About title = {"Amazon"}></About> */}
     </>
   );
 }
