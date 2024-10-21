@@ -1,55 +1,31 @@
 import React from "react";
-import Navbar from "./Navbar";
 
-function Home({ title }) {
-  const name = "Mohal Lal";
-  const age = 65;
+function Home({ Add }) {
+  let age = 35;
 
-  const product = {
-    name: "Kissan Jam",
-    price: 450,
-    category: "Grocery",
-  };
-
-  const array = [10, 20, 30, 40, 50];
-
-  const add = (a , b) => {
-    console.log("The sum of a and b is " , (a + b));
+  if (age > 18) {
+    console.log("adult");
+  } else {
+    console.log("not adult");
   }
 
-  //To use JavaScript in jsx use {} to write javascript
-  //To apply conditional statement in jsx we use Ternary Operator (? = if , : = else)
+  //(condition) ?(if) :(else) = terniary operator
+
+  const array = ["Mohan", "Rohan", "Abdul", "Sachin"];
 
   return (
-    <>
-      <Navbar title={title}></Navbar>
-      <h1 className="my-5 text-danger">This is the Home Page title {title}</h1>
-      <h1>Name of person is : {name}</h1>
-      <h1>Age of person is : {age > 18 ? "Adult" : "Not a adult"}</h1>
+    <div>
+      <h1>This is the Home component</h1>
+      <button onClick={() => Add(50, 40)}>Click here</button>
 
-      <button onClick={()=> add(40 , 50)}>Click Here</button>
-
-      <table className="table  table-danger table-striped mt-5">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Category</th>
-          </tr>
-          <tr>
-            <td>{product.name}</td>
-            <td>{product.price}</td>
-            <td>{product.category}</td>
-          </tr>
-        </thead>
-      </table>
+      <h1>{age > 18 ? "Adult" : "Not adult"}</h1>
 
       <div>
         {array.map((a) => {
-          return <h1 key={a}>{a}</h1>;
+          return <p className="mx-5 fs-2">{a}</p>;
         })}
       </div>
-    </>
+    </div>
   );
 }
 

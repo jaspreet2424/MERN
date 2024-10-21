@@ -1,12 +1,17 @@
 import React from "react";
-import Home from "./Components/Home";
 import About from "./Components/About";
+import Home from "./Components/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
 
 function App() {
+  const add = (a , b) => {
+    console.log("The sum of 10 and 20 is", a + b);
+  };
+
   return (
     <>
-      <Home title = {"Flipcart"} ></Home>
-      {/* <About title = {"Amazon"}></About> */}
+      <Home Add = {add}></Home>
     </>
   );
 }
